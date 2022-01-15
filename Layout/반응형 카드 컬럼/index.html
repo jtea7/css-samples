@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main-content {
+        background: lightgray;
+        padding-top: 3em;
+        padding-bottom: 3em;
+      }
+      .card {
+        padding: 1em;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+      }
+      .columns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+      }
+
+      .columns > * {
+        /* 600px 보다 크면 3칸으로 변경된다. */
+        flex-basis: calc(calc(600px - 100%) * 999);
+        flex-grow: 1;
+      }
+
+      .another-section {
+        background: white;
+        padding: 1em;
+        flex-grow: 0.2;
+        /*max-width: 15em;*/
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main-content">
+      <div class="columns">
+        <div class="columns">
+          <div class="card flow">
+            <h2>Card1</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
+              illum.
+            </p>
+          </div>
+          <div class="card flow">
+            <h2>Card3</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
+              illum.
+            </p>
+          </div>
+          <div class="card flow">
+            <h2>Card2</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
+              illum.
+            </p>
+          </div>
+        </div>
+
+        <div class="another-section">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            placeat illo, sequi dolore eum maiores voluptate incidunt voluptas,
+            asperiores hic alias officia cupiditate in voluptatum iure vitae
+            cumque voluptatem reiciendis?
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

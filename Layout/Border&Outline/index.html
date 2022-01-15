@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        font-size: 1.4rem;
+        border: 0;
+        background: 0;
+        cursor: pointer;
+        padding: 0.5em 1em;
+      }
+
+      img {
+        outline: 3px solid lime;
+        outline-offset: -1.5em;
+      }
+
+      .border {
+        /* border는 공간 영역을 차지하지만 */
+        border: 2px solid red;
+        border-radius: 10px;
+      }
+
+      .outline {
+        /*  outline은 공간 영역을 차지하지 않는다. */
+        /*  outline은 border와 다르게 radius를 적용할 수 없다. */
+        /*  outline은 border와 다르게 상하좌우 별도 설정할 수 없다. */
+        outline: 2px solid #fff;
+        outline-offset: -5px;
+        background: #333;
+        color: white;
+      }
+
+      :root {
+        --ff-primary: basic-sans, sans-serif;
+        --clr-primary: #ee6352;
+        --clr-body: #333;
+        --clr-bg: #ddd;
+        --spacer: 1rem;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .split {
+        display: flex;
+        gap: 2em;
+        justify-content: space-around;
+      }
+
+      .flow > * + * {
+        margin-top: var(--flow-space, var(--spacer));
+      }
+
+      body {
+        font-family: var(--ff-primary);
+        min-height: 100vh;
+        font-size: 1.125em;
+        line-height: 1.6;
+        color: var(--clr-body);
+        background: var(--clr-bg);
+        padding: 3em;
+        text-align: center;
+      }
+
+      a {
+        color: var(--clr-primary);
+      }
+
+      .content {
+        width: 70vw;
+        margin: 3rem auto;
+        padding: 3em;
+        box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);
+        background: white;
+      }
+
+      .title {
+        font-weight: 900;
+        color: var(--clr-primary);
+        line-height: 0.8;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Border vs Outline</h1>
+    <div class="content flow">
+      <div class="split">
+        <button class="border">I have a border</button>
+        <button class="outline">I have a outline</button>
+      </div>
+      <img src="https://assets.codepen.io/308367/cardio.jpg" />
+    </div>
+  </body>
+</html>

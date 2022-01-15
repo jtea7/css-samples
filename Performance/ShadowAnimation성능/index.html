@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --ff-primary: basic-sans, sans-serif;
+        --clr-primary: #ee6352;
+        --clr-body: #333;
+        --clr-bg: #ddd;
+        --spacer: 1rem;
+      }
+
+      body {
+        padding: 3em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3em;
+        align-items: start;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .flow > * + * {
+        margin-top: var(--flow-space, var(--spacer));
+      }
+
+      body {
+        font-family: var(--ff-primary);
+        min-height: 100vh;
+        font-size: 1.125em;
+        line-height: 1.6;
+        color: var(--clr-body);
+        background: var(--clr-bg);
+      }
+
+      a {
+        color: var(--clr-primary);
+      }
+
+      .content {
+        margin: 3rem auto;
+        padding: 3em;
+        background: white;
+      }
+
+      .title {
+        font-weight: 900;
+        color: var(--clr-primary);
+        line-height: 0.8;
+      }
+
+      .content {
+        box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+        transition: transform 1s ease;
+      }
+
+      /* 성능이 떨어지는 애니메이션 */
+      .shadow-hover {
+        position: relative;
+        top: 0;
+        transition: top 1s ease, box-shadow 1s ease;
+      }
+
+      .shadow-hover:hover {
+        /* top까지 변경하면 퍼포먼스는 더 안좋아짐*/
+        top: -0.35em;
+        box-shadow: 0 0.5rem 1rem -0.25em rgba(0, 0, 0, 0.3);
+      }
+
+      /* 코드량은 많지만 성능에는 유리하다 */
+      .pseudo-hover {
+        position: relative;
+      }
+
+      .pseudo-hover:hover {
+        transform: translateY(-0.35em) scale(1.02);
+      }
+
+      .pseudo-hover::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        box-shadow: 0 0.5rem 3rem -0.25em rgba(0, 0, 0, 0.3);
+        transition: opacity 1s ease;
+      }
+
+      .pseudo-hover:hover::after {
+        /* Opacity는 Repaint를 하지 않는다. */
+        opacity: 1;
+      }
+
+      .youtube {
+        grid-column: 1 / -1;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content shadow-hover">
+      <h1 class="title">Janky animation</h1>
+      <p>
+        Lorem ipsum dolor, <a href="#">sit amet consectetur</a> adipisicing
+        elit. Aliquid sapiente perferendis nulla sed consequuntur eveniet.
+        Itaque veritatis qui labore quia odio nihil, magni soluta facilis
+        necessitatibus cumque repellendus optio laborum.
+      </p>
+    </div>
+    <div class="content pseudo-hover">
+      <h1 class="title">Smooth as butter</h1>
+      <p>
+        Lorem ipsum dolor, <a href="#">sit amet consectetur</a> adipisicing
+        elit. Aliquid sapiente perferendis nulla sed consequuntur eveniet.
+        Itaque veritatis qui labore quia odio nihil, magni soluta facilis
+        necessitatibus cumque repellendus optio laborum.
+      </p>
+    </div>
+
+    <div class="youtube">
+      <p>
+        this was created as a part of a tutorial which you can
+        <a href="https://youtu.be/u6Rur7G8HNY">watch right here</a> .
+      </p>
+    </div>
+  </body>
+</html>

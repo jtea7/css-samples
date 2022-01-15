@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shape-outside</title>
+    <style type="text/css">
+      .container {
+        padding: 0 2rem;
+        /*max-width: 62.5rem;*/
+        margin: 0 auto;
+      }
+      .soup-image {
+        width: 500px;
+        float: right;
+        shape-margin: 2rem;
+        shape-outside: url(Image002.png);
+      }
+
+      .plant-hero {
+        background: #e6ffe0;
+        padding: 5rem 0 0;
+        /* 부모 요소는 자식 요소가 float 되면 해당 요소의 height를 알지 못하게 된다. 
+           flow-root를 설정하지 않으면 float된 이미지 영역까지 section 영역은 
+           Text영역까지만 차지한다. */
+        display: flow-root;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="plant-hero">
+      <img src="Image003.png" alt="" class="soup-image" />
+      <div class="container">
+        <h1>A beautiful home</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+          voluptatem quis earum quidem sint culpa quia nisi? Et distinctio ut
+          minima. Numquam, pariatur. Harum nostrum fugit nam id? Maxime,
+          tempore.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum
+          voluptates sunt quaerat error, accusantium nihil quo. Saepe in
+          voluptate blanditiis perferendis laborum quisquam corrupti repellat
+          alias nostrum ex! Consequatur, harum!
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

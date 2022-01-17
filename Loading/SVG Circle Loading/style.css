@@ -1,0 +1,56 @@
+/* 참고자료 */
+/* https://blog.naver.com/PostView.naver?blogId=nicholasdw&logNo=222236512525&redirect=Dlog&widgetTypeCall=true&directAccess=false */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #05091f;
+}
+
+svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+svg circle {
+  fill: none;
+  stroke-width: 10;
+  stroke: #00a1ff;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+  /* 점선을 만드는 간격 */
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    stroke-dashoffset: 440;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+  50.1% {
+    stroke-dashoffset: 880;
+  }
+}

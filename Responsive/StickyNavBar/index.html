@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="content">
+        <div class="logo">
+          <a href="#">Welcome</a>
+        </div>
+        <ul class="menu-list">
+          <div class="icon cancel-btn">
+            <i class="fas fa-times"></i>
+          </div>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="icon menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+
+    <div class="banner"></div>
+    <div class="about">
+      <div class="content">
+        <div class="title">
+          Responsive Sticky Navigation Bar on Scroll using HTML CSS & JavaScript
+        </div>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non
+          architecto, commodi quo tenetur aperiam nam fugit placeat alias,
+          molestiae vel amet iusto perspiciatis suscipit magnam quia possimus
+          pariatur incidunt repellendus rerum beatae animi vitae nemo
+          reprehenderit. Inventore fugiat rem numquam, est ad aperiam vitae
+          molestiae dolorum itaque. Enim voluptas nostrum error sed dolorem
+          cupiditate tenetur aperiam architecto animi, libero eligendi inventore
+          amet, numquam vero repellat aliquam in, possimus hic soluta odit
+          distinctio officiis? Odio, itaque iste laboriosam doloremque quos
+          suscipit!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad rem
+          obcaecati perspiciatis nulla quam nobis neque esse, laboriosam cumque
+          quod. Minima consequuntur perspiciatis necessitatibus corrupti soluta
+          molestiae animi aliquam, sint dolor debitis, accusamus officiis autem
+          reprehenderit unde eius impedit fugit. Error accusamus ad aspernatur
+          soluta illo odit, nam voluptatibus amet.
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam
+          veritatis, magnam laborum blanditiis quos adipisci quae tenetur odit
+          id repudiandae quia delectus, fugiat minima. Aperiam asperiores
+          laborum amet libero id ipsa accusamus, nobis ducimus nesciunt
+          temporibus provident quibusdam qui voluptatibus nihil ea quasi
+          deserunt nostrum dolorum a? Vero fugit quis fugiat temporibus
+          aspernatur quam pariatur, nihil ab exercitationem laboriosam at.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
+          magni doloribus odio fugit? Ullam reprehenderit magnam eos rerum eum
+          repellendus, enim labore? Dicta quia ea eaque dolores, quos tenetur
+          veritatis ipsum quibusdam? Tempore delectus libero tenetur facere
+          inventore, maiores unde molestiae laboriosam minus veritatis soluta
+          saepe, officiis, in voluptatem nesciunt!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+          nihil excepturi aliquam esse asperiores quia qui odio modi suscipit!
+          Veritatis accusantium atque saepe cumque labore illo laudantium modi
+          molestias. Saepe ex quasi placeat odio quod nesciunt laudantium
+          tenetur. Atque quae vero culpa sed nihil natus doloremque nemo
+          suscipit eaque, maiores ducimus ab fugiat omnis aut commodi debitis
+          pariatur quod exercitationem hic tenetur vel dignissimos quas
+          similique eveniet. Praesentium obcaecati saepe non doloremque
+          quibusdam quo optio harum repellendus, ipsam perferendis debitis.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const body = document.querySelector('body');
+      const navbar = document.querySelector('.navbar');
+      const menu = document.querySelector('.menu-list');
+      const menuBtn = document.querySelector('.menu-btn');
+      const cancelBtn = document.querySelector('.cancel-btn');
+      menuBtn.onclick = () => {
+        menu.classList.add('active');
+        menuBtn.classList.add('hide');
+        body.classList.add('disabledScroll');
+      };
+      cancelBtn.onclick = () => {
+        menu.classList.remove('active');
+        menuBtn.classList.remove('hide');
+        body.classList.remove('disabledScroll');
+      };
+
+      window.onscroll = () => {
+        console.log(this.screenY);
+        this.scrollY > 20
+          ? navbar.classList.add('sticky')
+          : navbar.classList.remove('sticky');
+      };
+    </script>
+  </body>
+</html>
